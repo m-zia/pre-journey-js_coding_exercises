@@ -7,6 +7,8 @@
 export function capitalize(word) {
 	if (word === undefined) throw new Error('word is required');
 	// Add your code here!
+	
+	//testing github commit
 }
 
 export function generateInitials(firstName, lastName) {
