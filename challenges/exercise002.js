@@ -29,18 +29,18 @@ export function countSheep(arr) {
 		}
 	}
 
-  	return counter;
+	return counter;
 }
 
 export function hasMPostCode(person) {
 	if (person === undefined) throw new Error('person is required');
 	// Your code here!
-	if(person.address.postCode[0] == 'M') {
+	if (person.address.postCode[0] == 'M') {
 		return person.address.city == 'Manchester';
 	}
 
 	else {
 		return false
 	}
-	
+
 }

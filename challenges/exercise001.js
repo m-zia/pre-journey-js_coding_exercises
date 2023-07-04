@@ -17,7 +17,7 @@ export function generateInitials(firstName, lastName) {
 	let firstInitial = firstName.charAt(0).toUpperCase();
 	let lastInitial = lastName.charAt(0).toUpperCase();
 	let initials = firstInitial + '.' + lastInitial;
-	return initials 
+	return initials
 }
 
 // defining a function to truncate values so we can pass test cases that need answers at 2 decimal places
@@ -69,15 +69,15 @@ export function reverseWord(word) {
 export function reverseAllWords(words) {
 	if (words === undefined) throw new Error('words is required');
 	// Add your code here!
-	
+
 	function reverseString(string) {
 		let reversedString = "";
 		for (let i = string.length - 1; i >= 0; i--) {
-		  reversedString +=  string[i];
+			reversedString += string[i];
 		}
 		return reversedString;
 	}
-	  
+
 	function reverseWords(wordArray) {
 		let reversedArray = [];
 		for (let i = 0; i < wordArray.length; i++) {
@@ -86,7 +86,7 @@ export function reverseAllWords(words) {
 		}
 		return reversedArray;
 	}
-	
+
 	return reverseWords(words);
 
 
@@ -110,7 +110,7 @@ export function getMeanScore(scores) {
 	for (let i = 0; i < scores.length; i++) {
 		sum += scores[i];
 	}
-	
+
 	let mean = sum / scores.length;
 	return Number(mean.toFixed(2));
 }
@@ -118,13 +118,13 @@ export function getMeanScore(scores) {
 export function simpleFizzBuzz(n) {
 	if (n === undefined) throw new Error('n is required');
 	// Add your code here!
-	if(n%15 == 0) {
+	if (n % 15 == 0) {
 		return "fizzbuzz";
 	}
-	if(n%3 == 0) {
+	if (n % 3 == 0) {
 		return "fizz";
 	}
-	if(n%5 == 0) {
+	if (n % 5 == 0) {
 		return "buzz";
 	}
 	else {
