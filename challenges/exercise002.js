@@ -1,16 +1,20 @@
 export function getFillings(sandwich) {
 	if (sandwich === undefined) throw new Error('ingredients is required');
-	// Your code here!
+	// Your code here!'
+	return sandwich.fillings;
 }
 
 export function isFromManchester(person) {
 	if (person === undefined) throw new Error('person is required');
 	// Your code here!
+	return person.city == 'Manchester';
 }
 
 export function getBusNumbers(people) {
 	if (people === undefined) throw new Error('people is required');
 	// Your code here!
+	let buses = Number(people / 40);
+	return Math.ceil(buses);
 }
 
 export function countSheep(arr) {
