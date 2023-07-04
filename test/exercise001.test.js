@@ -12,7 +12,7 @@ import {
 } from "../challenges/exercise001";
 
 describe("capitalize", () => {
-  test.only("returns a capitalized string", () => {
+  test("returns a capitalized string", () => {
     expect(capitalize("hello")).toBe("Hello");
     expect(capitalize("the quick fox")).toBe("The quick fox");
     expect(capitalize("oh no, bears!!!")).toBe("Oh no, bears!!!");
