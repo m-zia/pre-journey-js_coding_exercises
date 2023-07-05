@@ -1,15 +1,7 @@
 export function findSmallNums(nums) {
 	if (!nums) throw new Error('nums is required');
 	// Your code here
-	let ans = [];
-
-	for (let i = 0; i < nums.length; i++) {
-		if (nums[i] < 1) {
-			ans.push(nums[i]);
-		}
-	}
-
-	return ans;
+	return nums.filter(number => number < 1);
 }
 
 export function findNamesBeginningWith(names, char) {
@@ -18,11 +10,11 @@ export function findNamesBeginningWith(names, char) {
 	// Your code here
 	const ans = [];
 
-	for (let i = 0; i < names.length; i++) {
-		if (names[i][0] === char) {
-			ans.push(names[i]);
+	names.forEach(name => {
+		if (name[0] === char) {
+			ans.push(name)
 		}
-	}
+	});
 
 	return ans;
 }
@@ -32,11 +24,11 @@ export function findVerbs(words) {
 	// Your code here
 	const verbs = [];
 
-	for (let i = 0; i < words.length; i++) {
-		if (words[i].startsWith("to ")) {
-			verbs.push(words[i]);
+	words.forEach(word => {
+		if (word.startsWith("to ")) {
+			verbs.push(word);
 		}
-	}
+	});
 
 	return verbs;
 }
@@ -46,41 +38,26 @@ export function getIntegers(nums) {
 	// Your code here
 	const integerArray = [];
 
-	for (let i = 0; i < nums.length; i++) {
-		if (Number.isInteger(nums[i])) {
-			integerArray.push(nums[i]);
+	nums.forEach(number => {
+		if (Number.isInteger(number)) {
+			integerArray.push(number);
 		}
-	}
+	});
 
 	return integerArray;
+
 }
 
 export function getCities(users) {
 	if (!users) throw new Error('users is required');
 	// Your code here
-	const cities = [];
-
-	for (let i = 0; i < users.length; i++) {
-		const user = users[i];
-		const cityDisplayName = user.data.city.displayName;
-		cities.push(cityDisplayName);
-	}
-
-	return cities;
+	return users.map(user => user.data.city.displayName);
 }
 
 export function getSquareRoots(nums) {
 	if (!nums) throw new Error('nums is required');
 	// Your code here
-	const ans = [];
-
-	for (let i = 0; i < nums.length; i++) {
-		const squareRoot = Math.sqrt(nums[i]);
-		const roundedSquareRoot = squareRoot.toFixed(2); // round to 2 decimal places
-		ans.push(Number(roundedSquareRoot)); // convert back to number
-	}
-
-	return ans;
+	return nums.map(number => Number(Math.sqrt(number).toFixed(2)));
 }
 
 export function findSentencesContaining(sentences, str) {
@@ -89,13 +66,11 @@ export function findSentencesContaining(sentences, str) {
 	// Your code here
 	const ans = [];
 
-	for (let i = 0; i < sentences.length; i++) {
-		const sentence = sentences[i];
-
+	sentences.forEach(sentence => {
 		if (sentence.toLowerCase().includes(str.toLowerCase())) {
 			ans.push(sentence);
 		}
-	}
+	});
 
 	return ans;
 }
@@ -105,17 +80,17 @@ export function getLongestSides(triangles) {
 	// Your code here
 	const longestSides = [];
 
-	for (let i = 0; i < triangles.length; i++) {
-		let longestSide = triangles[i][0];
+	triangles.forEach(array => {
+		let longestSide = array[0];
 
-		for (let j = 1; j < triangles[i].length; j++) {
-			if (triangles[i][j] > longestSide) {
-				longestSide = triangles[i][j];
+		array.forEach(side => {
+			if (side > longestSide) {
+				longestSide = side;
 			}
-		}
+		});
 
 		longestSides.push(longestSide);
-	}
+	});
 
 	return longestSides;
 }
