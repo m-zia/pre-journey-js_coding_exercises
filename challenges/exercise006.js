@@ -12,6 +12,16 @@
  */
 export const sumMultiples = (arr) => {
 	if (arr === undefined) throw new Error('arr is required');
+
+	let total = 0;
+
+	arr.forEach(num => {
+		if (num % 3 === 0 || num % 5 === 0) {
+			total += num;
+		}
+	})
+
+	return total;
 };
 
 /**
@@ -21,6 +31,10 @@ export const sumMultiples = (arr) => {
  */
 export const isValidDNA = (str) => {
 	if (str === undefined) throw new Error('str is required');
+
+	let pattern = /^[CGTA]+$/;
+
+	return pattern.test(str);
 };
 
 /**
@@ -30,6 +44,15 @@ export const isValidDNA = (str) => {
  */
 export const getComplementaryDNA = (str) => {
 	if (str === undefined) throw new Error('str is required');
+
+	//to avoid .replace() undoing the actions of the previous .replace() we create an 'interim' value
+	// A -> T
+	// C -> Y -> G
+	// T -> X -> A
+	// G -> C
+	return str.replace(/T/g, 'X').replace(/A/g, 'T')
+		.replace(/X/g, 'A').replace(/C/g, 'Y')
+		.replace(/G/g, 'C').replace(/Y/g, 'G');
 };
 
 /**
