@@ -62,6 +62,27 @@ export const getComplementaryDNA = (str) => {
  */
 export const isItPrime = (n) => {
 	if (n === undefined) throw new Error('n is required');
+
+	// negative numbers
+	if (n <= 1) {
+		return false
+	};
+
+	// even numbers
+	if (n % 2 == 0 && n > 2) {
+		return false;
+	}
+
+	//if a number is prime, then it has a square root, so we can iterate up to that, instead of the original number
+	let squareRoot = Math.sqrt(n);
+
+	//increment in twos, as we already checked even number condition
+	for (let i = 3; i <= squareRoot; i += 2) {
+		if (n % i === 0) {
+			return false;
+		}
+	}
+	return true;
 };
 
 /**
@@ -78,6 +99,15 @@ export const isItPrime = (n) => {
 export const createMatrix = (n, fill) => {
 	if (n === undefined) throw new Error('n is required');
 	if (fill === undefined) throw new Error('fill is required');
+
+	let matrix = [];
+
+	for (let i = 0; i < n; i++) {
+		let row = Array(n).fill(fill);
+		matrix.push(row);
+	}
+
+	return matrix;
 };
 
 /**
@@ -95,4 +125,14 @@ export const createMatrix = (n, fill) => {
 export const areWeCovered = (staff, day) => {
 	if (staff === undefined) throw new Error('staff is required');
 	if (day === undefined) throw new Error('day is required');
+
+	let count = 0;
+
+	for (let i = 0; i < staff.length; i++) {
+		if (staff[i].rota.includes(day)) {
+			count++;
+		}
+	}
+	
+	return count >= 3;
 };
