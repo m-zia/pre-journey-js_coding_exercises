@@ -69,7 +69,7 @@ export const isItPrime = (n) => {
 	};
 
 	// even numbers
-	if (n % 2 == 0 && n > 2) {
+	if (n % 2 === 0 && n > 2) {
 		return false;
 	}
 

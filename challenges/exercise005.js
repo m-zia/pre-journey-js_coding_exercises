@@ -7,7 +7,7 @@ export const findNextNumber = (nums, n) => {
 	const index = nums.findIndex(num => num == n);
 
 	// If the target number is not found or is at the last index, return null
-	if (index == -1 || index == nums.length - 1) {
+	if (index === -1 || index === nums.length - 1) {
 		return null;
 	}
 
