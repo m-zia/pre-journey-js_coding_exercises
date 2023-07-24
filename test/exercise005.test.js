@@ -10,31 +10,31 @@ import {
 
 describe("findNextNumber", () => {
   test("returns the next number after the given number in the array", () => {
-    //Act & Assert
+    //Arrange, Act & Assert
     expect(findNextNumber([5, 3, 7, 8, 1, 10], 7)).toBe(8);
     expect(findNextNumber([5, 3, 7, 8, 1, 10], 1)).toBe(10);
     expect(findNextNumber([4, 22, 654, 123, 65, 23, 40, 1], 22)).toBe(654);
   });
 
   test("if the number is not found in the array, returns null", () => {
-    //Act & Assert
+    //Arrange, Act & Assert
     expect(findNextNumber([5, 3, 7, 8, 1, 10], 55)).toBe(null);
   });
 
   test("if the number is found more than once, returns the number after the first instance", () => {
-    //Act & Assert
+    //Arrange, Act & Assert
     expect(findNextNumber([5, 3, 7, 8, 1, 3, 10], 3)).toBe(7);
   });
 
   test("if the number is found in the final index position of the array, returns null", () => {
-    //Act & Assert
+    //Arrange, Act & Assert
     expect(findNextNumber([5, 3, 7, 8, 1, 3, 10], 10)).toBe(null);
   });
 });
 
 describe("count1sand0s", () => {
   test("returns an object with the count of 1s and 0s in a string", () => {
-    //Act & Assert
+    //Arrange, Act & Assert
     expect(count1sand0s("11000")).toEqual({
       1: 2,
       0: 3,
@@ -59,7 +59,7 @@ describe("count1sand0s", () => {
 
 describe("reverseNumber", () => {
   test("reverses the digits of a number", () => {
-    //Act & Assert
+    //Arrange, Act & Assert
     expect(reverseNumber(5)).toBe(5);
     expect(reverseNumber(104)).toBe(401);
     expect(reverseNumber(12345)).toBe(54321);
@@ -78,14 +78,14 @@ describe("sumArrays", () => {
 
 describe("arrShift", () => {
   test("returns an array with the first and last items swapped", () => {
-    //Act & Assert
+    //Arrange, Act & Assert
     expect(arrShift([1, 2])).toEqual([2, 1]);
     expect(arrShift([1, 2, 3])).toEqual([3, 2, 1]);
     expect(arrShift([1, 2, 3, 4])).toEqual([4, 2, 3, 1]);
   });
 
   test("makes no difference when the array length is < 2", () => {
-    //Act & Assert
+    //Arrange, Act & Assert
     expect(arrShift([1])).toEqual([1]);
     expect(arrShift([])).toEqual([]);
   });
@@ -160,7 +160,7 @@ describe("findNeedle", () => {
 
 describe("getWordFrequencies", () => {
   test("returns the frequencies of each word in a string", () => {
-    //Act & Assert
+    //Arrange, Act & Assert
     expect(getWordFrequencies("hello world")).toEqual({
       hello: 1,
       world: 1,
