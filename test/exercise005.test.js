@@ -10,26 +10,31 @@ import {
 
 describe("findNextNumber", () => {
   test("returns the next number after the given number in the array", () => {
+    //Act & Assert
     expect(findNextNumber([5, 3, 7, 8, 1, 10], 7)).toBe(8);
     expect(findNextNumber([5, 3, 7, 8, 1, 10], 1)).toBe(10);
     expect(findNextNumber([4, 22, 654, 123, 65, 23, 40, 1], 22)).toBe(654);
   });
 
   test("if the number is not found in the array, returns null", () => {
+    //Act & Assert
     expect(findNextNumber([5, 3, 7, 8, 1, 10], 55)).toBe(null);
   });
 
   test("if the number is found more than once, returns the number after the first instance", () => {
+    //Act & Assert
     expect(findNextNumber([5, 3, 7, 8, 1, 3, 10], 3)).toBe(7);
   });
 
   test("if the number is found in the final index position of the array, returns null", () => {
+    //Act & Assert
     expect(findNextNumber([5, 3, 7, 8, 1, 3, 10], 10)).toBe(null);
   });
 });
 
 describe("count1sand0s", () => {
   test("returns an object with the count of 1s and 0s in a string", () => {
+    //Act & Assert
     expect(count1sand0s("11000")).toEqual({
       1: 2,
       0: 3,
@@ -54,6 +59,7 @@ describe("count1sand0s", () => {
 
 describe("reverseNumber", () => {
   test("reverses the digits of a number", () => {
+    //Act & Assert
     expect(reverseNumber(5)).toBe(5);
     expect(reverseNumber(104)).toBe(401);
     expect(reverseNumber(12345)).toBe(54321);
@@ -63,19 +69,23 @@ describe("reverseNumber", () => {
 
 describe("sumArrays", () => {
   test("returns the total of the numbers in all sub arrays", () => {
+    //Arrange
     const arrs = [[1, 2, 3], [6, 3, 1], [1], [9, 10], [3, 5]];
+    //Act & Assert
     expect(sumArrays(arrs)).toBe(44);
   });
 });
 
 describe("arrShift", () => {
   test("returns an array with the first and last items swapped", () => {
+    //Act & Assert
     expect(arrShift([1, 2])).toEqual([2, 1]);
     expect(arrShift([1, 2, 3])).toEqual([3, 2, 1]);
     expect(arrShift([1, 2, 3, 4])).toEqual([4, 2, 3, 1]);
   });
 
   test("makes no difference when the array length is < 2", () => {
+    //Act & Assert
     expect(arrShift([1])).toEqual([1]);
     expect(arrShift([])).toEqual([]);
   });
@@ -83,6 +93,7 @@ describe("arrShift", () => {
 
 describe("findNeedle", () => {
   test("returns true if any of the properties of an object contain the specified string", () => {
+    //Arrange
     const obj1 = {
       name: "LINNMON",
       description: "Small round table",
@@ -90,9 +101,11 @@ describe("findNeedle", () => {
       store: "Warrington",
       code: 12872,
     };
+    //Act & Assert
     expect(findNeedle(obj1, "table")).toBe(true);
 
     // Note that the objects provided to the function could have any keys/values
+    //Arrange
     const obj2 = {
       product_name: "Sparkle n Shine Dishwasher Tablets",
       price: 1.99,
@@ -100,10 +113,12 @@ describe("findNeedle", () => {
       discounted: false,
       available: true,
     };
+    //Act & Assert
     expect(findNeedle(obj2, "Dishwasher")).toBe(true);
   });
 
   test("returns false if none of the properties of an object contain the specified string", () => {
+    //Arrange
     const obj1 = {
       name: "LINNMON",
       description: "Small round table",
@@ -111,9 +126,11 @@ describe("findNeedle", () => {
       store: "Warrington",
       code: 12872,
     };
+    //Act & Assert
     expect(findNeedle(obj1, "chair")).toBe(false);
 
     // Note that the objects provided to the function could have any keys/values
+    //Arrange
     const obj2 = {
       product_name: "Sparkle n Shine Dishwasher Tablets",
       price: 1.99,
@@ -121,10 +138,12 @@ describe("findNeedle", () => {
       discounted: false,
       available: true,
     };
+    //Act & Assert
     expect(findNeedle(obj2, "Carpet Cleaner")).toBe(false);
   });
 
   test("The search string should not be case sensitive", () => {
+    //Arrange
     const obj1 = {
       name: "LINNMON",
       description: "Small round table",
@@ -132,7 +151,7 @@ describe("findNeedle", () => {
       store: "Warrington",
       code: 12872,
     };
-
+    //Act & Assert
     expect(findNeedle(obj1, "warrington")).toBe(true);
     expect(findNeedle(obj1, "linnmon")).toBe(true);
     expect(findNeedle(obj1, "Liverpool")).toBe(false);
@@ -141,6 +160,7 @@ describe("findNeedle", () => {
 
 describe("getWordFrequencies", () => {
   test("returns the frequencies of each word in a string", () => {
+    //Act & Assert
     expect(getWordFrequencies("hello world")).toEqual({
       hello: 1,
       world: 1,
